@@ -6,7 +6,7 @@ import "./sass/main.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/rick-morty/">
       <App />
     </BrowserRouter>
   </React.StrictMode>
