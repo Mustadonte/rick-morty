@@ -1,0 +1,21 @@
+.container {
+  max-width: 1440px;
+  padding: 86px 210px 0 210px;
+  margin: 0 auto;
+
+  @include mob {
+    max-width: $mob;
+    padding: 92px 24px 0 24px;
+  }
+}
+
+.character__container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  @include mob {
+    place-content: center;
+    width: 360px;
+    padding: 0 28px;
+  }
+}
