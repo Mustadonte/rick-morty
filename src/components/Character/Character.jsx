@@ -9,11 +9,14 @@ export const Character = () => {
   const { characterId } = useParams();
   const [character, setCharacter] = useState({});
   useEffect(() => {
-    (async () => {
-      const data = await getCharacterById(characterId);
-      setCharacter(data);
-    })();
-  }, []);
+    if (characterId) {
+      console.log(characterId);
+      (async () => {
+        const data = await getCharacterById(characterId);
+        setCharacter(data);
+      })();
+    }
+  }, [characterId]);
   const { image, name, gender, status, origin, species, type } = character;
 
   return (
