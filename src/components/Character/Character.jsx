@@ -8,15 +8,13 @@ export const Character = () => {
   const navigate = useNavigate();
   const { characterId } = useParams();
   const [character, setCharacter] = useState({});
-  useEffect(() => {
-    if (characterId) {
-      console.log(characterId);
-      (async () => {
-        const data = await getCharacterById(characterId);
-        setCharacter(data);
-      })();
-    }
-  }, [characterId]);
+
+  const getCharacter = async () => {
+    const data = await getCharacterById(characterId);
+    setCharacter(data);
+  };
+  getCharacter();
+
   const { image, name, gender, status, origin, species, type } = character;
 
   return (
