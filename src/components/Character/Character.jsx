@@ -9,13 +9,14 @@ export const Character = () => {
   const { characterId } = useParams();
   const [character, setCharacter] = useState({});
 
-  const getCharacter = async () => {
-    const data = await getCharacterById(characterId);
+  const renderCharacter = async (id) => {
+    const data = await getCharacterById(id);
     setCharacter(data);
   };
-  getCharacter();
 
-  const { image, name, gender, status, origin, species, type } = character;
+  renderCharacter(characterId);
+
+  const { origin } = character;
 
   return (
     <div className="character__container">
